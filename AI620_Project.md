@@ -1,6 +1,6 @@
 # CityU AI Student Assistant — 5-Week Game Plan
 
-Your project is a **CityU Student Assistant AI Agent** built with: an LLM, RAG (for document search), a Vector DB, and an MCP server for tool/database connectivity. Here's everything you need to know to build this in 5 weeks as a 2-person team.[^1_1]
+Your project is a **CityU Student Assistant AI Agent** built with: an LLM, RAG (for document search), a Vector DB, and an MCP server for tool/database connectivity. Here's everything you need to know to build this in 5 weeks as a 2-person team.
 
 ***
 
@@ -11,11 +11,11 @@ With only 2 people and 5 weeks, **start local, deploy to Azure for the final dem
 
 | Option | Pros | Cons | Verdict |
 | :-- | :-- | :-- | :-- |
-| **Local (Ollama + LLaMA 3)** | Zero cost, full control, fast iteration, no API limits | Can't share publicly, no serverless auto-scale | ✅ **Best for weeks 1–4** |
-| **Azure AI Foundry (free tier)** | GPT-4o-mini is cheap, serverless functions, managed infra | Free tier has token limits, Azure complexity | ✅ **Best for week 5 demo** |
-| **AWS Free Tier (Bedrock)** | Familiar to you (you've used Rekognition/S3), Lambda | Bedrock has very limited free access; Claude/Titan cost money quickly | ⚠️ Riskier — Bedrock models are NOT free |
+| **Local (Ollama + LLaMA 3)** | Zero cost, full control, fast iteration, no API limits | Can't share publicly, no serverless auto-scale | **Best for weeks 1–4** |
+| **Azure AI Foundry (free tier)** | GPT-4o-mini is cheap, serverless functions, managed infra | Free tier has token limits, Azure complexity |  **Best for week 5 demo** |
+| **AWS Free Tier (Bedrock)** | Familiar to you (you've used Rekognition/S3), Lambda | Bedrock has very limited free access; Claude/Titan cost money quickly | Riskier — Bedrock models are NOT free |
 
-**Recommended stack:** Ollama (local LLM) → LangChain → ChromaDB (vector DB) → FastAPI (MCP-style server) → Streamlit or simple HTML UI. For final submission, swap the local LLM call with Azure OpenAI (GPT-4o-mini) using free credits.[^1_1]
+**Recommended stack:** Ollama (local LLM) → LangChain → ChromaDB (vector DB) → FastAPI (MCP-style server) → Streamlit or simple HTML UI. For final submission, swap the local LLM call with Azure OpenAI (GPT-4o-mini) using free credits.
 
 ***
 
@@ -112,13 +112,11 @@ Both converge for integration testing in Weeks 3–4, and both contribute to doc
 
 ## Critical Advice
 
-1. **Don't over-scope.** Your proposal wisely says "scope down to just building the agent as first milestone"  — stick to that. A polished 3-tool agent beats a half-broken 10-tool one.[^1_1]
+1. **Don't over-scope.** Your proposal wisely says "scope down to just building the agent as first milestone"  — stick to that. A polished 3-tool agent beats a half-broken 10-tool one.
 2. **Use Azure for Students** — go to `azure.microsoft.com/en-us/free/students` and claim your \$100 credit. This makes the Azure path genuinely free for your demo week.
 3. **Mock your data early.** CityU may not have public APIs. Create a `cityu_courses.json` with 20–30 courses manually — enough to make the demo believable.
 4. **RAG quality > model quality.** A well-chunked, well-retrieved context with LLaMA 3 8B will outperform a poorly retrieved context with GPT-4o. Invest time in chunk size (300–500 tokens) and metadata tagging.
-5. **The MCP pattern** from your proposal  is essentially the LangChain `AgentExecutor` + tools pattern. You don't need a dedicated MCP server library — the FastAPI backend serving tool endpoints *is* your MCP server.[^1_1]
+5. **The MCP pattern** from your proposal  is essentially the LangChain `AgentExecutor` + tools pattern. You don't need a dedicated MCP server library — the FastAPI backend serving tool endpoints *is* your MCP server.
 
 <div align="center">⁂</div>
-
-[^1_1]: TP01_T05_AI620_Shagun_Zandashia_Sai.docx
 
