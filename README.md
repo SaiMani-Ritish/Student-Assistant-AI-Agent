@@ -121,7 +121,7 @@ cityu-student-assistant/
 ### 1. Clone the Repository
 
 ```bash
-git clone <your-repo-url>
+git clone "https://github.com/SaiMani-Ritish/Student-Assistant-AI-Agent.git"
 cd cityu-student-assistant
 ```
 
