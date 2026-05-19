@@ -1,4 +1,4 @@
-# CityU Student Assistant AI Agent
+# AI620 CityU Student Assistant AI Agent
 
 An AI-powered academic assistant for **City University of Seattle (CityU)** students.  
 Ask questions about courses, prerequisites, degree requirements, academic policies, and more — answered instantly by a RAG-enabled LangChain agent.
